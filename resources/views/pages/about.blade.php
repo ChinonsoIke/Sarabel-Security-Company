@@ -20,17 +20,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 about-top-left">
-                    <h1>
-                        Everything <br>
-                        You can imagine <br>
-                        is right here
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
+                    <p>Sarabel Logistics and Security Services Limited (SLSSL) is a total security company offering an extensive line of physical, electronic and personal security protection services. The firm consists of three principal owners with a combined industry experience of over 35 years. The company was formed to offer value and world class service as a result of the significant weakness and inadequacies of security and protection services in the country in terms of professionalism, quality, and customer satisfaction and effectiveness.
+                    SLSSL is an integrated provider of security products and services: physical and personal security and procurement of security equipment and Kits for private and public sector clients.
+                    SLSSL promote complete range of managed surveillance services, including: remote monitoring of your CCTV and access control, building management systems, security help desk with full control room functionality. SLSSL as a professional and security service provider, focus on the identification, assessment and mitigation of risk relating to human safety and business continuity solutions tailored towards saving time, saving cost and improving profits
                     </p>
                 </div>
                 <div class="col-lg-6 about-top-right">
-                    <img class="img-fluid" src="img/pages/at.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('images/guarding2.png')}}" alt="">
                 </div>
             </div>
         </div>	
@@ -43,12 +39,10 @@
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
                     <div class="title text-center">
-                        <h1 class="mb-10">Experienced Mentor Team</h1>
-                        <p>Who are in extremely love with eco friendly system.</p>
-                    </div>
+                        <h1 class="mb-10">Experienced Team</h1></div>
                 </div>
             </div>						
-            <div class="row justify-content-center d-flex align-items-center">
+            <!-- <div class="row justify-content-center d-flex align-items-center">
                 <div class="col-md-3 single-team">
                     <div class="thumb">
                         <img class="img-fluid" src="img/pages/t1.jpg" alt="">
@@ -100,7 +94,7 @@
                         <p>Creative Content Developer</p>			    	
                     </div>
                 </div>																								
-            </div>
+            </div> -->
         </div>	
     </section>
     <!-- End team Area -->

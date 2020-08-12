@@ -58,6 +58,14 @@
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
+
+            <a href="{{route('clients.index')}}" class="{{ Request::is('backend/clients', 'backend/clients/create') ? 'nav-link active' :  'nav-link' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Clients
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
             
             </li>
         </ul>

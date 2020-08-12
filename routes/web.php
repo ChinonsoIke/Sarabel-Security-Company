@@ -24,6 +24,8 @@ Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
 Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 
+Route::get('/portfolio', 'ClientelleController@index')->name('clientelle.index');
+
 /*Route::get('/', function () {
     return view('welcome');
 });*/
@@ -31,10 +33,12 @@ Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 Route::group(['prefix'=>'backend', 'namespace'=>'Backend'], function () {
     Route::group(['middleware'=>'auth'], function () {
         Route::get('/', 'DashboardController@index')->name('backend');
-        Route::resource('services', 'ServicesController');
+        Route::resource('services', 'ServicesController')->except(['update']);
+        Route::post('/services/{services}', 'ServicesController@update')->name('services.update');
         Route::resource('posts', 'PostsController');
         Route::resource('pictures', 'PicturesController');
         Route::resource('tasks', 'TasksController');
+        Route::resource('clients', 'ClientsController');
     });
 });
 

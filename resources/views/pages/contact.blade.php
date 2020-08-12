@@ -26,8 +26,9 @@
                             <span class="lnr lnr-home"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>Dhaka, Bangladesh</h5>
-                            <p>56/8, West Panthapath</p>
+                            <h5>Anthony Village, Lagos State</h5>
+                            <p>26, Ope-Ifa Street/Saji Ayangade,</p>
+                            <p>by Camp-Ground Road (Apostolic Faith Church)</p>
                         </div>
                     </div>
                     <div class="single-contact-address d-flex flex-row">
@@ -35,7 +36,8 @@
                             <span class="lnr lnr-phone-handset"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>00 (880) 9865 562</h5>
+                            <h5>General Inquiries: +234 081 804 52276</h5>
+                            <h5>Support Line: +234 803 500 2003</h5>
                             <p>Mon to Fri 9am to 6 pm</p>
                         </div>
                     </div>
@@ -44,7 +46,7 @@
                             <span class="lnr lnr-envelope"></span>
                         </div>
                         <div class="contact-details">
-                            <h5>support@codethemes.com</h5>
+                            <h5>info@ sarabel.com.ng</h5>
                             <p>Send us your query anytime!</p>
                         </div>
                     </div>														

@@ -1,0 +1,15 @@
+{!! echo Form::model($service, ['route'=>['services.update', $service->id], 'method'=>'POST']) !!}
+                <div class="col-md-8">
+                    {{ Form::label('service_name', 'Service Name:') }}
+                    {{ Form::text('service_name', null, ["class"=>"form-control"]) }}
+
+                    {{ Form::label('slug', 'Slug:') }}
+                    {{ Form::text('slug', null, ["class"=>"form-control"]) }}
+
+                    <label name="featured_image" enctype="multipart/form-data">Update Image:</label>
+                    <input type="file" name="featured_image">
+
+                    {{ Form::label('description', 'Description:') }}
+                    {{ Form::textarea('description', null, ["class"=>"form-control"]) }}
+                </div>
+            {!! Form::close() !!}

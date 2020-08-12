@@ -1,8 +1,8 @@
 @extends('admin.layouts.adminlayout')
 
-@section('title', 'Admin | Services')
+@section('title', 'Clients')
 
-@section('name', 'Services')
+@section('name', 'Clients')
 
 @section('content')
 
@@ -11,14 +11,14 @@
             <div class="row">
                 <div class="col-md-10"></div>
                 <div class="col-md-2 create">
-                    <a href="{{route('services.create')}}" class="btn btn-primary">Add Service</a>
+                    <a href="{{route('clients.create')}}" class="btn btn-primary">Add Client</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Services</h3>
+                            <h3 class="card-title">Clients</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -26,21 +26,26 @@
                                 <thead class="col-md-10">
                                     <tr>
                                         <th>S/N</th>
-                                        <th>Service</th>
+                                        <th>Client Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                @foreach($services as $service)
+                                @foreach($clients as $client)
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
-                                        <td>{{$service->service_name}}</td>
-                                        <td><a href="{{route('services.edit', $service->id)}}" class="btn btn-small btn-success">Edit</a></td>
+                                        <td>{{$client->name}}</td>
+                                        <td><a href="" class="btn btn-small btn-success">Edit</a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                            <hr>
+                            
+                            <div class="offset-5">
+                                {{ $clients->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

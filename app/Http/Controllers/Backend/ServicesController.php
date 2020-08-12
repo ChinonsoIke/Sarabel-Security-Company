@@ -105,7 +105,42 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validate
+        $service= Service::find($id);
+
+        $this->validate($request, [
+            'service_name'=> 'required|max:255',
+            'slug'=> "required|alpha_dash|max:255|unique:services,slug,$id",
+            'image'=> 'required|image',
+            'description'=> 'required'
+        ]);
+
+        //save to db
+        $service= Service::find($id);
+        $service->service_name = $request->service_name;
+        $service->slug= $request->slug;
+        $service->description= $request->description;
+
+        //save image
+        if ($request->hasFile('image')) {
+            $image= $request->file('image');
+            $filename= time() . '.' . $image->getClientOriginalExtension();
+            $location= public_path('images/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
+            $oldFileName= $service->featured_image;
+
+            //update img in db
+            $service->image= $filename;
+
+            //delete old img
+            Storage::delete($oldFileName);
+        }
+
+        $service->save();
+
+        Session::flash('success', 'Service updated successfully');
+
+        return redirect()->route('services.index');
     }
 
     /**

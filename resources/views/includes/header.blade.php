@@ -35,6 +35,7 @@
                 </li>
                 <li><a href="{{route('blog.index')}}">Blog</a></li>
                 <li><a href="{{route('gallery.index')}}">Gallery</a></li>
+                <li><a href="{{route('clientelle.index')}}">Portfolio</a></li>
                 <li><a href="/contact">Contact</a></li>	
                 </li>			          
             </ul>
