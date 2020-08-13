@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@index')->name('index');
-Route::get('/contact', 'PagesController@contact')->name('contact')->middleware('auth');
+Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/services', 'ServicesController@index')->name('services.list');
 Route::get('/services/{slug}', 'ServicesController@show')->name('services.detail');
