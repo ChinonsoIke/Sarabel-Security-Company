@@ -63,7 +63,7 @@
                                 <div class="mt-20 alert-msg" style="text-align: left;"></div>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <textarea class="common-textarea form-control" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                <textarea class="common-textarea form-control" name="message" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required=""></textarea>
                                 <button class="primary-btn mt-20 text-white" style="float: right;">Send Message</button>
                                                                         
                             </div>

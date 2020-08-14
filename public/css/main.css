@@ -158,6 +158,23 @@ section.home-slidershow{
 
 /* end slideshow */
 
+.tops {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.toppers {
+  margin-top: 50px;
+}
+
+.content {
+  margin-bottom: 50px;
+}
+
+.team-header {
+  color: #fab700;
+}
+
 ol, ul {
   margin: 0;
   padding: 0;
@@ -1980,8 +1997,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #fab700;
 }
 
-.desc {
-  margin-bottom: 50px;
+.quote-btn {
+  margin-top: 50px;
 }
 
 /*--------------------------------------------------------------
