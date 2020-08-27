@@ -3,20 +3,18 @@
         <div class="row">
             <div class="col-6 top-head-left">				  			
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    <li>•   SUPPORT 234 803 500 2003</li>
                 </ul>
             </div>
             <div class="col-6 top-head-right">
                 <ul>
-                    <li><a href="tel:+880 012 3654 896"><span>+880 012 3654 896</span> <span class="lnr lnr-phone-handset"></span></a></li>
-                    <li><a href="#">Register / Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Login</a></li>
                 </ul>
             </div>			  			
         </div>
-    </div> -->
+    </div>
+    <hr> -->
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex topper">
             <div id="logo">

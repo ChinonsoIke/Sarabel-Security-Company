@@ -30,8 +30,16 @@ Route::get('/portfolio', 'ClientelleController@index')->name('clientelle.index')
     return view('welcome');
 });*/
 
+Route::get('backend/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('backend/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::get('backend/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+Route::post('backend/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+Route::get('backend/password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+Route::post('backend/password/reset', 'Auth\AdminResetPasswordController@reset');
+Route::get('backend/password/reset/{token}', 'Auth\AdminResetPasswordController@sendResetForm')->name('admin.password.reset');
+
 Route::group(['prefix'=>'backend', 'namespace'=>'Backend'], function () {
-    Route::group(['middleware'=>'auth'], function () {
+    Route::group(['middleware'=>'auth:admin'], function () {
         Route::get('/', 'DashboardController@index')->name('backend');
         Route::resource('services', 'ServicesController')->except(['update']);
         Route::post('/services/{services}', 'ServicesController@update')->name('services.update');
@@ -43,6 +51,8 @@ Route::group(['prefix'=>'backend', 'namespace'=>'Backend'], function () {
 });
 
 Auth::routes();
+Route::get('users/logout', 'Auth\LoginController@logout')->name('user.logout');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

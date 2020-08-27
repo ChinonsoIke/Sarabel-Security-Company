@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- start banner Area -->
-    <section class="home-slidershow">
+    {{--<section class="home-slidershow">
         <div class="slide-show">
             <div class="vt-slideshow">
                 <ul>
@@ -21,8 +21,87 @@
                 </ul> 
             </div>
         </div>
+    </section>--}}
+
+    <!--slider-->
+    <div id="sarabel-slide" class="carousel slide" data-ride= "carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#sarabel-slide" data-slide-to="0" class="active"></li>
+            <li data-target="#sarabel-slide" data-slide-to="1"></li>
+            <li data-target="#sarabel-slide" data-slide-to="2"></li>
+            <li data-target="#sarabel-slide" data-slide-to="3"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class= "carousel-item active">
+                <img src="{{asset("images/slide/banner1.png")}}" alt="Banner 1" width= "1100" height= "500">
+            </div>
+            <div class= "carousel-item">
+                <img src="{{asset("images/slide/banner3.png")}}" alt="Banner 2" width= "1100" height= "500">
+            </div>
+            <div class= "carousel-item">
+                <img src="{{asset("images/slide/banner4.png")}}" alt="Banner 3" width= "1100" height= "500">
+            </div>
+            <div class= "carousel-item">
+                <img src="{{asset("images/slide/banner5.png")}}" alt="Banner 4" width= "1100" height= "500">
+            </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev arrow" href="#sarabel-slide" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next arrow" href="#sarabel-slide" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <!--/slider-->
+    <!-- End banner Area -->
+
+    <!-- Start about Area -->
+    <section class="service-area service-page-service section-gap" id="service">
+        <div class="container">					
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-service">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{asset('images/s11.jpg')}}" alt="">
+                        </div>
+                        <div class="detail">
+                            <h2 class="about-title">Who We Are</h2>
+                            <hr>
+                            <p>Sarabel Logistics and Security Services Ltd is a total security company. The company was formed to offer value and world class service as a result of the significant weakness and inadequacies of security and protection services in the country in terms of professionalism, quality, and customer satisfaction, competitive cost and effectiveness.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="single-service">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{asset('images/s2.jpg')}}" alt="">
+                        </div>
+                        <div class="detail">
+                            <h2 class="about-title">What We Do</h2>
+                            <hr>
+                            <p> We protect assets, human resources; promote confidence and business continuity helping businesses to remain focused on their core competencies. We offer extensive line of security and personal protection services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="single-service">
+                        <div class="thumb">
+                            <img class="img-fluid" src="{{asset('images/s4.jpg')}}" alt="">
+                        </div>
+                        <div class="detail">
+                            <h2 class="about-title">Why Choose Us?</h2>
+                            <hr>
+                            <p>Sarabel Logistics and Security Services Ltd has the most skilled professionals within its ranks, who always go the extra mile to ensure its clients are fully satisfied and comfortable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
     </section>
-    <!-- End banner Area -->	
+    <!-- End about Area -->		
 
     <!-- Start service Area -->
     <section class="service-area section-gap" id="service">
@@ -55,32 +134,11 @@
     </section>
     <!-- End service Area -->
 
-    <!-- start choose area -->
-    <section class="feature-area section-gap">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-8 pb-40 header-text">
-                    <h1>Why Choose Us?</h1>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <p>Sarabel Logistics and Security Services Ltd is a total security company.
-                 We protect assets, human resources; promote confidence and business continuity
-                  helping businesses to remain focused on their core competencies. We offer extensive
-                   line of security and personal protection services. The company was formed to offer
-                    value and world class service as a result of the significant weakness and inadequacies
-                     of security and protection services in the country in terms of professionalism, quality,
-                      and customer satisfaction, competitive cost and effectiveness.</p>
-            </div>
-        </div>
-    </section>
-
-
     <!-- Start feature Area -->
-    <section class="feature-area section-gap" id="feature">
+    <!-- <section class="feature-area section-gap" id="feature">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-8 pb-40 header-text">
+                <div class="col-md-8 pb-40 header-text title">
                     <h1>Some Features that Make Us Unique</h1>
                 </div>
             </div>
@@ -129,7 +187,7 @@
                 </div>						 -->
             </div>
         </div>	
-    </section>
+    </section> -->
     <!-- End feature Area -->				
 
     <!-- Start fact Area -->
@@ -138,31 +196,63 @@
             <div class="row">
                 <div class="col single-fact">
                     <h1 class="counter">256</h1>
-                    <p>Projects Completed</p>
+                    <h5 class="counter-text">Projects Completed</h5>
                 </div>
                 <div class="col single-fact">
                     <h1 class="counter">384</h1>
-                    <p>Really Happy Clients</p>
+                    <h5 class="counter-text">Really Happy Clients</h5>
                 </div>
                 <div class="col single-fact">
                     <h1 class="counter">1059</h1>
-                    <p>Total Tasks Completed</p>
-                </div>
-                <div class="col single-fact">
-                    <h1 class="counter">2239</h1>
-                    <p>Cups of Coffee Taken</p>
-                </div>	
-                <div class="col single-fact">
-                    <h1 class="counter">125</h1>
-                    <p>In House Professionals</p>
-                </div>												
+                    <h5 class="counter-text">Total Tasks Completed</h5>
+                </div>										
             </div>
         </div>	
     </section>
-    <!-- end fact Area -->							
+    <!-- end fact Area -->	
+
+    <!-- Start partners Area -->
+    <section class="galery-area section-gap" id="gallery">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h1 class="mb-10">Partners and Agencies</h1>
+                    </div>
+                </div>
+            </div>					
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/npf.png')}}" alt="">
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/Maplesoft2.png')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/ashaka.png')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/starcom.png')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/urbaco.gif')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/verint.png')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/centurion.jpg')}}" alt="">
+                </div>	
+                <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6 partners">
+                    <img class="img-fluid partner-img" src="{{asset('images/aventura.png')}}" alt="">
+                </div>													
+            </div>
+        </div>	
+    </section>
+    <!-- End partners Area -->						
 
     <!-- Start gallery Area -->
-    <section class="galery-area section-gap" id="gallery">
+    <!-- <section class="galery-area section-gap" id="gallery">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
@@ -173,7 +263,7 @@
             </div>					
             <div class="row">
                 @foreach ($imgs as $img)
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
                         <a href="" class="single-gallery">
                             <img class="img-fluid" src="{{asset('images/' . $img->picture)}}" alt="">
                         </a>
@@ -185,11 +275,11 @@
                 <a href="{{route('gallery.index')}}" class="primary-btn text-uppercase">View gallery</a>
             </div>
         </div>	
-    </section>
+    </section> -->
     <!-- End galery Area -->
 
     <!-- Start blog Area -->
-    <section class="blog-area section-gap" id="blog">
+    <!-- <section class="blog-area section-gap" id="blog">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
@@ -215,6 +305,6 @@
                 <a href="{{route('blog.index')}}" class="primary-btn text-uppercase">View blog</a>
             </div>
         </div>	
-    </section>
+    </section> -->
     <!-- End blog Area -->
 @endsection

@@ -12,7 +12,7 @@ class PagesController extends Controller
     public function index () {
         $services= Service::orderBy('id', 'desc')->limit(3)->get();
         $posts= Post::orderBy('id', 'asc')->limit(4)->get();
-        $imgs= Picture::orderBy('id', 'asc')->limit(6)->get();
+        $imgs= Picture::orderBy('id', 'asc')->limit(4)->get();
         return view ('pages.index', compact('services', 'posts', 'imgs'));
     }
 

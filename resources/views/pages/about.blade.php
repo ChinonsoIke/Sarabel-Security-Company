@@ -5,7 +5,7 @@
     <section>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
+                <div class="about-content col-lg-12 title">
                     <h1>
                         About Us				
                     </h1>
@@ -26,7 +26,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 about-top-right">
-                    <img class="img-fluid" src="{{asset('images/guarding2.png')}}" alt="">
+                    <img class="img-fluid" src="{{asset('images/s4.jpg')}}" alt="">
                 </div>
             </div>
         </div>	

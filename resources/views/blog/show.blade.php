@@ -8,7 +8,7 @@
                 <div class="col-lg-8 post-list blog-post-list">
                     <div class="single-post">
                         <img class="img-fluid" src="{{asset('images/' . $post->featured_image)}}" alt="">
-                        <a href="#">
+                        <a href="#" class="title">
                             <h1>{{$post->title}}</h1>
                         </a>
                         <div class="content-wrap">

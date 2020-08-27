@@ -67,7 +67,15 @@
                 </p>
             </a>
             
-            </li>
+            <li class="nav-header">EXTRAS</li>
+            <a href="{{route('admin.logout')}}" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Logout
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+
         </ul>
         </nav>
         <!-- /.sidebar-menu -->

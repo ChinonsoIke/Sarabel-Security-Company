@@ -14,8 +14,8 @@ class AdminTableSeeder extends Seeder
     {
         $adminOne = new Administrator();
         $adminOne->name = 'Admin Example';
-        $adminOne->email = 'nonso@example.com';
-        $adminOne->password = 'admin123456';
+        $adminOne->email = 'chinonsoikewelugo@gmail.com';
+        $adminOne->password = bcrypt('admin123456');
         $adminOne->save();
     }
 }
