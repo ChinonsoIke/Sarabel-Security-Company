@@ -24,35 +24,39 @@
     </section>--}}
 
     <!--slider-->
-    <div id="sarabel-slide" class="carousel slide" data-ride= "carousel">
-        <ul class="carousel-indicators">
-            <li data-target="#sarabel-slide" data-slide-to="0" class="active"></li>
-            <li data-target="#sarabel-slide" data-slide-to="1"></li>
-            <li data-target="#sarabel-slide" data-slide-to="2"></li>
-            <li data-target="#sarabel-slide" data-slide-to="3"></li>
-        </ul>
-        <div class="carousel-inner">
-            <div class= "carousel-item active">
-                <img src="{{asset("images/slide/banner1.png")}}" alt="Banner 1" width= "1100" height= "500">
-            </div>
-            <div class= "carousel-item">
-                <img src="{{asset("images/slide/banner3.png")}}" alt="Banner 2" width= "1100" height= "500">
-            </div>
-            <div class= "carousel-item">
-                <img src="{{asset("images/slide/banner4.png")}}" alt="Banner 3" width= "1100" height= "500">
-            </div>
-            <div class= "carousel-item">
-                <img src="{{asset("images/slide/banner5.png")}}" alt="Banner 4" width= "1100" height= "500">
+    <section class="home-slidershow">
+        <div class="slide-show">
+            <div id="sarabel-slide" class="carousel slide" data-ride= "carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#sarabel-slide" data-slide-to="0" class="active"></li>
+                    <li data-target="#sarabel-slide" data-slide-to="1"></li>
+                    <li data-target="#sarabel-slide" data-slide-to="2"></li>
+                    <li data-target="#sarabel-slide" data-slide-to="3"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class= "carousel-item active">
+                        <img src="{{asset("images/slide/banner1.png")}}" alt="Banner 1" width= "1100" height= "500">
+                    </div>
+                    <div class= "carousel-item">
+                        <img src="{{asset("images/slide/banner3.png")}}" alt="Banner 2" width= "1100" height= "500">
+                    </div>
+                    <div class= "carousel-item">
+                        <img src="{{asset("images/slide/banner4.png")}}" alt="Banner 3" width= "1100" height= "500">
+                    </div>
+                    <div class= "carousel-item">
+                        <img src="{{asset("images/slide/banner5.png")}}" alt="Banner 4" width= "1100" height= "500">
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev arrow" href="#sarabel-slide" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next arrow" href="#sarabel-slide" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
             </div>
         </div>
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev arrow" href="#sarabel-slide" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next arrow" href="#sarabel-slide" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-    </div>
+    </section>
     <!--/slider-->
     <!-- End banner Area -->
 
