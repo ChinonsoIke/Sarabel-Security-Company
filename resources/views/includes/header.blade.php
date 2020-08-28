@@ -1,12 +1,12 @@
 <header id="header" id="home">
     <div class="container-fluid header-top">
-        <div class="row col-10 offset-1">
-            <div class="col-6 top-head-left">				  			
+        <div class="row col-md-12">
+            <div class="col-xs-12 col-md-6 top-head-left">				  			
                 <ul>
                     <li><p>•   SUPPORT <strong>234 803 500 2003</strong></p></li>
                 </ul>
             </div>
-            <div class="col-6 top-head-right">
+            <div class="col-xs-12 col-md-6 top-head-right">
                 <ul>
                     <li><a href="/register" class="btn btn-secondary">Register</a></li>
                     <li><a href="/login" class="btn btn-primary">Login</a></li>
