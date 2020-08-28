@@ -24,7 +24,7 @@
     </section>--}}
 
     <!--slider-->
-    <section class="home-slidershow .d-sm-none .d-md-block">
+    <section class="home-slidershow d-none d-sm-block">
         <div class="slide-show">
             <div id="sarabel-slide" class="carousel slide" data-ride= "carousel">
                 <ul class="carousel-indicators">

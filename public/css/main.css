@@ -62,7 +62,7 @@ body {
 .slide-show{
 	position:relative;
 	border-top:1px solid #e4e5e7;
-	border-bottom:1px solid #e4e5e7;
+	border-bottom:10px solid #bfa95c;
 }
 .slide-show .tp-bannertimer{
 	display:none !important;
@@ -2031,6 +2031,7 @@ position: absolute;
   transition: all 0.5s;
   z-index: 997; */
   background-color:#fff;
+  border-bottom:5px solid #bfa95c;
 }
 
 #header hr {
