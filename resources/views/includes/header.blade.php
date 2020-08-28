@@ -1,7 +1,7 @@
 <header id="header" id="home">
-    <div class="container-fluid header-top">
+    <div class="container-fluid header-top d-none d-sm-block">
         <div class="row col-md-12">
-            <div class="col-12 col-md-6 top-head-left d-none d-sm-block">				  			
+            <div class="col-12 col-md-6 top-head-left">				  			
                 <ul>
                     <li><p>•   SUPPORT <strong>234 803 500 2003</strong></p></li>
                 </ul>
@@ -35,7 +35,8 @@
                 <li><a href="{{route('gallery.index')}}">Gallery</a></li>
                 <li><a href="{{route('clientelle.index')}}">Portfolio</a></li>
                 <li><a href="/contact">Contact</a></li>	
-                </li>			          
+                <li><a href="/register" class="d-block d-sm-none">Register</a></li>
+                <li><a href="/login" class="d-block d-sm-none">Login</a></li>		          
             </ul>
             </nav><!-- #nav-menu-container -->		    		
         </div>
