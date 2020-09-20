@@ -9,7 +9,7 @@ use Password;
 use Auth;
 use Illuminate\Http\Request;
 
-class AdminPasswordController extends Controller
+class AdminResetPasswordController extends Controller
 {
     /*
     |--------------------------------------------------------------------------

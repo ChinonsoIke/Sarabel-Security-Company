@@ -50,6 +50,13 @@ Route::group(['prefix'=>'backend', 'namespace'=>'Backend'], function () {
     });
 });
 
+Route::group(['prefix'=>'users', 'namespace'=>'Users'], function () {
+    Route::group(['middleware'=>'auth'], function () {
+        Route::get('/', 'DashboardController@index')->name('users.dashboard');
+        Route::resource('projects','ProjectsController');
+    });
+});
+
 Auth::routes();
 Route::get('users/logout', 'Auth\LoginController@logout')->name('user.logout');
 
