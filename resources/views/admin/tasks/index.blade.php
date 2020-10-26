@@ -10,9 +10,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-10"></div>
-                <div class="col-md-2 create">
+                {{--<div class="col-md-2 create">
                     <a href="{{route('tasks.create')}}" class="btn btn-primary">Add New Task</a>
-                </div>
+                </div>--}}
             </div>
             <div class="row">
                 <div class="col-12">
@@ -25,10 +25,12 @@
                             <table class="table table-bordered table-hover">
                                 <thead class="col-md-10">
                                     <tr>
-                                        <th>S/N</th>
-                                        <th>Task</th>
+                                        <th>Project</th>
+                                        <th>Title</th>
                                         <th>Description</th>
+                                        <th>Started</th>
                                         <th>Status</th>
+                                        <th>Completed</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -36,11 +38,20 @@
                                 <tbody>
                                 @foreach($tasks as $task)
                                     <tr>
-                                        <th>{{ $loop->iteration }}</th>
+                                        <th>{{$task->project->title}}</th>
                                         <td>{{$task->title}}</td>
                                         <td>{{$task->description}}</td>
+                                        <td>{{date('M j, Y', strtotime($task->created_at))}}</td>
                                         <td>{{$task->status}}</td>
-                                        <td><a href="" class="btn btn-small btn-success">Edit</a></td>
+                                        <td></td>
+                                        <td>
+                                            <a href="" class="btn-small btn-success">Edit</a>
+                                            <form action="{{route('tasks.destroy', $task->id)}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="submit" value="Delete" class="btn-small btn-danger">
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

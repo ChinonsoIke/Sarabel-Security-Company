@@ -11,7 +11,7 @@
             <div class="vt-slideshow">
                 <ul>
                     <li class="slide1" data-transition="random" ><img src="{{asset("images/s4.jpg")}}" alt="" /></li>
-                    <li class="slide1" data-transition="random" ><img src="{{asset("images/cctv1.jpg")}}" alt="" /></li>
+                    <li class="slide1" data-transition="random" ><img src="{{asset("images/cctvnew.jpg")}}" alt="" /></li>
                     <li class="slide2" data-transition="random" ><img src="{{asset("images/slide/convoy3.jpg")}}" alt="" /></li>
                     <li class="slide3" data-transition="random" ><img src="{{asset("images/slide/s9.jpg")}}" alt="" /></li>
                     <!-- <li class="slide3" data-transition="random" ><img src="{{asset("images/slide/banner6.png")}}" alt="" /></li>
@@ -35,22 +35,16 @@
                 </ul>
                 <div class="carousel-inner">
                     <div class= "carousel-item active">
-                        <img src="{{asset("images/s12.png")}}" alt="Banner 1" width= "1100" height= "500">
+                        <img src="{{asset("images/cctvnew3.jpg")}}" alt="Banner 2" height= "657">
                     </div>
                     <div class= "carousel-item">
-                        <img src="{{asset("images/cctv3.png")}}" alt="Banner 2" width= "1100" height= "500">
+                        <img src="{{asset("images/sec-convoy.jpg")}}" alt="Banner 3" height= "657">
                     </div>
                     <div class= "carousel-item">
-                        <img src="{{asset("images/escort.png")}}" alt="Banner 3" width= "1100" height= "500">
+                        <img src="{{asset("images/per-sec.jpg")}}" alt="Banner 4" height= "657">
                     </div>
                     <div class= "carousel-item">
-                        <img src="{{asset("images/per-sec.png")}}" alt="Banner 4" width= "1100" height= "500">
-                    </div>
-                    <div class= "carousel-item">
-                        <img src="{{asset("images/perimeter.png")}}" alt="Banner 3" width= "1100" height= "500">
-                    </div>
-                    <div class= "carousel-item">
-                        <img src="{{asset("images/guard.png")}}" alt="Banner 3" width= "1100" height= "500">
+                        <img src="{{asset("images/arm-sec.jpg")}}" alt="Banner 3" height= "657">
                     </div>
                 </div>
                 <!-- Left and right controls -->

@@ -19,6 +19,8 @@
                 <img src="{{asset('img/sarabelogo_footer.png')}}" alt="AdminLTE Logo">
             </a><br>
 
+            <li class="nav-header">DASHBOARD</li>
+
             <a href="{{route('backend')}}" class="{{ Request::is('backend') ? 'nav-link active' :  'nav-link' }}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -26,6 +28,8 @@
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
+
+            <li class="nav-header">SITE CONTENTS</li>
 
             <a href="{{route('services.index')}}" class="{{ Request::is('backend/services', 'backend/services/create') ? 'nav-link active' :  'nav-link' }}">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -39,14 +43,6 @@
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                 Posts
-                <i class="right fas fa-angle-left"></i>
-                </p>
-            </a>
-
-            <a href="{{route('tasks.index')}}" class="{{ Request::is('backend/tasks', 'backend/tasks/create') ? 'nav-link active' :  'nav-link' }}">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                Tasks
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
@@ -66,9 +62,43 @@
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
+
+            <li class="nav-header">USER CONTENTS</li>
+
+            <a href="{{route('users.index')}}" class="{{ Request::is('backend/users', 'backend/users/create') ? 'nav-link active' :  'nav-link' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Users
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+
+            <a href="{{route('backend.projects.index')}}" class="{{ Request::is('backend/projects', 'backend/projects/create') ? 'nav-link active' :  'nav-link' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Projects
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+
+            <a href="{{route('tasks.index')}}" class="{{ Request::is('backend/tasks', 'backend/tasks/create') ? 'nav-link active' :  'nav-link' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Tasks
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+
+            <a href="{{route('backend.files.index')}}" class="{{ Request::is('backend/files', 'backend/files/create') ? 'nav-link active' :  'nav-link' }}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                Files
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
             
             <li class="nav-header">EXTRAS</li>
-            <a href="{{route('admin.logout')}}" class="nav-link active">
+            <a href="{{route('admin.logout')}}" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                 Logout

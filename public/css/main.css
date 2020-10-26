@@ -58,6 +58,10 @@ body {
   position: relative;
 }
 
+hello{
+  color: #04091e;
+}
+
 /*-------------slider show-------------------*/
 .slide-show{
 	position:relative;
@@ -2728,7 +2732,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-area {
   padding-top: 100px;
-  background-image: url(/images/footer5.png);
+  background-image: url(/images/footer6.png);
   background-color: #04091e;
 }
 
@@ -2737,6 +2741,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 25px;
   font-size: 18px;
   font-weight: 600;
+}
+
+.footer-area p {
+  color: rgb(194, 182, 182);
 }
 
 .copy-right-text i, .copy-right-text a {

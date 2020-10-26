@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use Illuminate\Support\Facades\Session;
 use Image;
+use Str;
 use Storage;
 
 class ServicesController extends Controller
@@ -43,7 +44,6 @@ class ServicesController extends Controller
         //validate
         $this->validate($request, [
             'service_name'=> 'required|max:255',
-            'slug'=> 'required|alpha_dash|max:255|unique:services,slug',
             'image'=> 'required|image',
             'description'=> 'required'
         ]);
@@ -51,7 +51,7 @@ class ServicesController extends Controller
         //store in db
         $service= new Service;
         $service->service_name = $request->service_name;
-        $service->slug= $request->slug;
+        $service->slug=Str::slug($request->service_name);
         $service->description= $request->description;
 
         //save image
@@ -110,7 +110,6 @@ class ServicesController extends Controller
 
         $this->validate($request, [
             'service_name'=> 'required|max:255',
-            'slug'=> "required|alpha_dash|max:255|unique:services,slug,$id",
             'image'=> 'required|image',
             'description'=> 'required'
         ]);
@@ -118,7 +117,7 @@ class ServicesController extends Controller
         //save to db
         $service= Service::find($id);
         $service->service_name = $request->service_name;
-        $service->slug= $request->slug;
+        $service->slug=Str::slug($request->service_name);
         $service->description= $request->description;
 
         //save image

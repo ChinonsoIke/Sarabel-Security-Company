@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\User;
 use Auth;
+use Str;
 
 class ProjectsController extends Controller
 {
@@ -44,8 +45,8 @@ class ProjectsController extends Controller
     {
         //validate
         $this->validate($request, [
-            'title'=>'required|max:255',
-            'slug'=>'required|alpha_dash|min:5|max:255|unique:projects,slug',
+            'title'=>'required|max:255|unique:projects,title',
+            // 'slug'=>'required|alpha_dash|min:5|max:255|unique:projects,slug',
             'description'=>'required',
         ]);
 
@@ -53,7 +54,7 @@ class ProjectsController extends Controller
         $user= Auth::user();
         $project= new Project;
         $project->title= $request->title;
-        $project->slug=$request->slug;
+        $project->slug=Str::slug($request->title);
         $project->description=$request->description;
 
         $user->projects()->save($project);
@@ -73,7 +74,8 @@ class ProjectsController extends Controller
     public function show($slug)
     {
         $project= Project::where('slug', '=', $slug)->first();
-        return view('users.projects.show', ["project"=>$project]);
+        $user= $project->users;
+        return view('users.projects.show', compact("project","user"));
     }
 
     /**
@@ -82,21 +84,11 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function edit($id)
-    // {
-    //     $categories= Category::all();
-    //     $post= Post::find($id);
-    //     $tags= Tag::all();
-    //     $cats= [];
-    //     $tags2= [];
-    //     foreach ($categories as $category) {
-    //         $cats[$category->id]= $category->name;
-    //     }
-    //     foreach ($tags as $tag) {
-    //         $tags2[$tag->id]= $tag->name;
-    //     }
-    //     return view('admin.posts.edit', ['categories'=>$cats, 'post'=>$post, 'tags'=>$tags2]);
-    // }
+    public function edit($id)
+    {
+        $project= Project::find($id);
+        return view('users.projects.edit', compact('project'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -105,56 +97,30 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function update(Request $request, $id)
-    // {
-    //     //validate
-    //     $post= Post::find($id);
+    public function update(Request $request, $id)
+    {
+        //validate
+        $project= Project::find($id);
+        $this->validate($request, [
+            'title'=>'required|max:255',
+            //'slug'=>"required|alpha_dash|min:5|max:255|unique:projects,slug,$id",
+            'description'=>'required',
+        ]);
 
-    //     $this->validate($request, [
-    //         "title"=>"required|max:255",
-    //         'slug'=>"required|alpha_dash|min:5|max:255|unique:posts,slug,$id",
-    //         'category_id'=>'required|integer',
-    //         "body"=>"required",
-    //         'author'=>'required|max:255'
-    //     ]);
+        //store in db
+        $user= Auth::user();
+        $project= Project::find($id);
+        $project->title= $request->title;
+        $project->slug=Str::slug($request->title);
+        $project->description=$request->description;
 
-    //     //save to db
-    //     $post= Post::find($id);
+        $user->projects()->save($project);
 
-    //     $post->title= $request->input('title');
-    //     $post->body= Purifier::clean($request->input('body'));
-    //     $post->slug= $request->input('slug');
-    //     $post->category_id= $request->category_id;
-    //     $post->author= $request->author;
+        Session::flash('success', 'Project successfully updated!');
 
-    //     if ($request->hasFile('featured_image')) {
-    //         $image= $request->file('featured_image');
-    //         $filename= time() . '.' . $image->getClientOriginalExtension();
-    //         $location= public_path('images/' . $filename);
-    //         Image::make($image)->resize(800, 400)->save($location);
-    //         $oldFileName= $post->featured_image;
-
-    //         //update the db
-    //         $post->featured_image= $filename;
-
-    //         //delete old img
-    //         Storage::delete($oldFileName);
-    //     };
-
-    //     $post->save();
-
-    //     if (isset($request->tags)) {
-    //         $post->tags()->sync($request->tags, true);
-    //     } else {
-    //         $post->tags()->sync([]);
-    //     };
-
-    //     //flash message
-    //     Session::flash('success', 'Post successfully updated');
-
-    //     //redirect
-    //     return redirect()->route('admin.posts.show', $post->id);
-    // }
+        //redirect
+        return redirect()->route('users.dashboard');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -162,25 +128,24 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    // public function destroy($id)
-    // {
-    //     $post= Post::find($id);
-    //     $post->tags()->detach();
-    //     Storage::delete($post->featured_image);
+    public function destroy($id)
+    {
+        $project= Project::find($id);
+        $project->users()->dissociate();
 
-    //     $post->delete();
+        $project->delete();
 
-    //     Session::flash('success', 'Post deleted successfully');
+        Session::flash('success', 'Project deleted successfully');
 
-    //     return redirect()->route('admin.posts.index');
-    // }
+        return redirect()->route('users.dashboard');
+    }
 
-    // public function getCategory($id) {
-    //     $category= Category::find($id);
+    public function getCategory($id) {
+        $category= Category::find($id);
 
 
-    //     return view('categories.index', ['category'=>$category]);
-    // }
+        return view('categories.index', ['category'=>$category]);
+    }
 
     
 }

@@ -4,6 +4,17 @@
 
 @section('name', 'Create New Post')
 
+@section('stylesheets')
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: "link code",
+            menubar: "false"
+        });
+    </script>
+@endsection
+
 @section('content')
         <!-- Main content -->
         <section class="content">
@@ -15,9 +26,6 @@
                             
                             <label for="title">Title:</label>
                             <input type="text" name="title" class="form-control">
-
-                            <label for="slug">Slug:</label>
-                            <input type="text" name="slug" class="form-control">
 
                             <label name="featured_image">Upload Featured Image:</label><br>
                             <input type="file" name="featured_image" class="file-btn">

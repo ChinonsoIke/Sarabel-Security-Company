@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Image;
 use Storage;
+use Str;
 
 class PostsController extends Controller
 {
@@ -44,7 +45,6 @@ class PostsController extends Controller
         //validate
         $this->validate($request, [
             'title'=>'required|max:255',
-            'slug'=>'required|alpha_dash|min:5|max:255|unique:posts,slug',
             'body'=>'required',
             'featured_image'=>'sometimes|image'
         ]);
@@ -52,7 +52,7 @@ class PostsController extends Controller
         //store in db
         $post= new Post;
         $post->title= $request->title;
-        $post->slug=$request->slug;
+        $post->slug=Str::slug($request->title);
         $post->body=$request->body;
 
         //save our image

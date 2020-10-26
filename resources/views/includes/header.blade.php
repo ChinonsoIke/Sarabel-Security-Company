@@ -8,8 +8,31 @@
             </div>
             <div class="col-12 col-md-6 top-head-right">
                 <ul>
-                    <li><a href="/register" class="btn btn-secondary">Register</a></li>
-                    <li><a href="/login" class="btn btn-primary">Login</a></li>
+                    @guest
+                        <li><a href="/login" class="btn btn-primary">Login</a></li>
+                        @if (Route::has('register'))
+                            <li><a href="/register" class="btn btn-secondary">Register</a></li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link hello dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Hello, {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('users.dashboard') }}">Dashboard</a><br>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
                 </ul>
             </div>			  			
         </div>

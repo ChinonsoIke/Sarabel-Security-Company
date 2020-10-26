@@ -9,9 +9,9 @@
                         <img class="img-fluid" src="{{asset('images/' . $service->image)}}" width= 1000 alt="">
                         <div class="service_name text-center title"><h1>{{$service->service_name}}</h1></div>
                         <div class="content-wrap desc">
-                            <p>{{$service->description}}</p>
+                            <p>{!!$service->description!!}</p>
                         </div>
-                        @if ($service->service_name == 'SECURITY GUARD SERVICES')
+                        {{--@if ($service->service_name == 'SECURITY GUARD SERVICES')
                             <div>
                                 <h3 class="team-header">Pricing</h3><br>
                                 <div class="row">
@@ -21,7 +21,7 @@
                                     <p class="col-md-4">Supervisor</p><p class="col-md-8">&#8358; 60,000 per unit</p>
                                 </div>
                             </div>
-                        @endif
+                        @endif--}}
                         <a href="/contact" class="primary-btn text-uppercase offset-5 quote-btn">Request Quote</a>
                     </div>
                 </div>

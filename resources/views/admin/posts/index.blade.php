@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-10"></div>
                 <div class="col-md-2 create">
-                    <a href="{{route('tasks.create')}}" class="btn btn-primary">Add New Post</a>
+                    <a href="{{route('posts.create')}}" class="btn btn-primary">Add New Post</a>
                 </div>
             </div>
             <div class="row">
@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>{{ $loop->iteration }}</th>
                                         <td>{{$post->title}}</td>
-                                        <td>{{substr(strip_tags($post->body), 0, 50)}}{{strlen(strip_tags($post->body)) > 50 ? '...' : '' }}</td>
+                                        <td>{!!substr(strip_tags($post->body), 0, 50)!!}{!!strlen(strip_tags($post->body)) > 50 ? '...' : '' !!}</td>
                                         <td>{{date('M j, Y', strtotime($post->created_at))}}</td>
                                         <td><a href="" class="btn btn-small btn-success">Edit</a></td>
                                     </tr>

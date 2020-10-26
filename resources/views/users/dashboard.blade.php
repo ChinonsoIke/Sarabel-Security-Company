@@ -2,12 +2,7 @@
 @section('content')
 <section>   
     <div class="container">
-        <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">
-                <a href="{{route('projects.create')}}" class="btn btn-primary">Add Project</a>
-            </div>
-        </div>
+        <br>
         <div class="row">
             <div class="col-md-8 col-sm-12">
                 <div class="card">
@@ -19,7 +14,6 @@
                         <table class="table table-bordered table-hover">
                             <thead">
                                 <tr>
-                                    <th>S/N</th>
                                     <th>Project</th>
                                     <th>Description</th>
                                     <th>Action</th>
@@ -29,10 +23,17 @@
                             <tbody>
                             @foreach($user->projects as $project)
                                 <tr>
-                                    <th>{{ $loop->iteration }}</th>
                                     <td>{{$project->title}}</td>
                                     <td>{{$project->description}}</td>
-                                    <td><a href="{{route('projects.edit', $project->id)}}" class="btn btn-small btn-success">Edit</a></td>
+                                    <td>
+                                        <a href="{{route('projects.show', $project->slug)}}" class="btn-small btn-primary">View</a> 
+                                        <a href="{{route('projects.edit', $project->id)}}" class="btn-small btn-success">Edit</a>
+                                        <form action="{{route('projects.destroy', $project->id)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="submit" value="Delete" class="btn-small btn-danger">
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -41,16 +42,20 @@
                 </div>
             </div>
 
-            <div class="col-md-3 offset-md-1">
-                <ul class="menu-has-children"><p>Activities</p>
-                    <li><a href="{{route('projects.index')}}">Projects</a></li>
-                    <li>New Message</li>
-                    <li>Inbox Messages</li>
+            <div class="dropdown col-md-3 offset-md-1">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    Activities <span class="caret"></span>
+                </button>
+                
+                <ul class="dropdown-menu">
+                    <li><a href="{{route('users.dashboard')}}">My Projects</a></li><hr>
+                    <li><a href="{{route('projects.create')}}">New Project</a></li><hr>
+                    <li>New Message</li><hr>
+                    <li>Inbox Messages</li><hr>
                     <li>Sent Messages</li>
-                    <li>Files</li>
                 </ul>
             </div>
-        </div>
+        </div><br>
     </div><!-- /.container-fluid -->
 </section>
 @endsection

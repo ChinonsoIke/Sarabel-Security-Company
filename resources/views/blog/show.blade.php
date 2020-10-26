@@ -12,7 +12,7 @@
                             <h1>{{$post->title}}</h1>
                         </a>
                         <div class="content-wrap">
-                            <p>{{$post->body}}</p>
+                            <p>{!!$post->body!!}</p>
                         </div>
                     </div>
                 </div>

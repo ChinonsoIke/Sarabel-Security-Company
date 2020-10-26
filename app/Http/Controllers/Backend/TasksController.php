@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Task;
+use App\Project;
 use Illuminate\Support\Facades\Session;
+use Str;
 
 class TasksController extends Controller
 {
@@ -25,9 +27,10 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('admin.tasks.create');
+        $project_id= $id;
+        return view('admin.tasks.create', compact('project_id'));
     }
 
     /**
@@ -41,33 +44,26 @@ class TasksController extends Controller
         //validate
         $this->validate($request, [
             'title'=> 'required|max:255',
-            'slug'=> 'required|alpha_dash|max:255|unique:services,slug',
             'description'=> 'required'
         ]);
 
         //store in db
+        $project= Project::find($request->project_id);
         $task= new Task;
         $task->title = $request->title;
-        $task->slug= $request->slug;
+        $task->slug=Str::slug($request->title);
         $task->description= $request->description;
+        $task->project_id= $request->project_id;
+        $task->status= $request->status;
 
         $task->save();
 
-        Session::flash('success', 'Task successfully added');
+        $project->tasks()->save($task);
 
-        return redirect()->route('tasks.index');
-    }
+        Session::flash('success', 'Task successfully created!');
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        $service= Task::where('slug', '=', $slug)->first();
-        return view('admin.tasks.show', ['task'=>$task]);
+        //redirect
+        return redirect()->route('backend.projects.show', $project->slug);
     }
 
     /**
@@ -78,7 +74,7 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        $task= Task::findOrFail($id);
+        $task= Task::find($id);
         return view('admin.tasks.edit', compact('task'));
     }
 
@@ -102,6 +98,11 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task= Task::find($id);
+        $task->project()->dissociate();
+        $task->delete();
+
+        Session::flash('success', 'Task deleted successfully');
+        return redirect()->back();
     }
 }

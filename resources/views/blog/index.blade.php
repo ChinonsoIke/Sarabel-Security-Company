@@ -23,7 +23,7 @@
                             <a href="{{route('blog.show', $post->slug)}}" class="title">
                                 <h1>{{$post->title}}</h1>
                             </a>
-                            <p>{{substr(strip_tags($post->body), 0, 300)}}{{strlen(strip_tags($post->body)) > 250 ? "[...]" : ""}}</p>
+                            <p>{!!substr(strip_tags($post->body), 0, 300)!!}{!!strlen(strip_tags($post->body)) > 250 ? "[...]" : ""!!}</p>
                             <small>Published: {{ date('M j, Y', strtotime($post->created_at)) }}</small>
                         </div>
                     @endforeach																			

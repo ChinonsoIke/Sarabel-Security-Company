@@ -45,15 +45,26 @@ Route::group(['prefix'=>'backend', 'namespace'=>'Backend'], function () {
         Route::post('/services/{services}', 'ServicesController@update')->name('services.update');
         Route::resource('posts', 'PostsController');
         Route::resource('pictures', 'PicturesController');
-        Route::resource('tasks', 'TasksController');
+        Route::resource('tasks', 'TasksController')->except(['update', 'create']);
+        Route::get('/tasks/create/{id}', 'TasksController@create')->name('tasks.create');
         Route::resource('clients', 'ClientsController');
+        Route::resource('files','FilesController', ['as'=>'backend'])->except(['update', 'create']);
+        Route::get('/files/create/{id}', 'FilesController@create')->name('backend.files.create');
+        Route::get('/files/download/{id}', 'FilesController@downloadFile')->name('backend.files.download');
+        Route::resource('projects','ProjectsController', ['as'=>'backend'])->except(['update']);
+        Route::resource('users','UsersController')->except(['update']);
     });
 });
 
 Route::group(['prefix'=>'users', 'namespace'=>'Users'], function () {
     Route::group(['middleware'=>'auth'], function () {
         Route::get('/', 'DashboardController@index')->name('users.dashboard');
-        Route::resource('projects','ProjectsController');
+        Route::resource('projects','ProjectsController')->except(['update']);
+        Route::post('/projects/{id}', 'ProjectsController@update')->name('projects.update');
+        Route::resource('files','FilesController')->except(['update', 'create']);
+        Route::post('/files/{id}', 'FilesController@update')->name('files.update');
+        Route::get('/files/create/{id}', 'FilesController@create')->name('files.create');
+        Route::get('/files/download/{id}', 'FilesController@downloadFile')->name('files.download');
     });
 });
 
